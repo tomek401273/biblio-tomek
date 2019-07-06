@@ -1,4 +1,4 @@
-package com.tgrajkowski.authortization.security;
+package com.tgrajkowski.security;
 
 import io.jsonwebtoken.Jwts;
 import org.springframework.security.authentication.AuthenticationManager;

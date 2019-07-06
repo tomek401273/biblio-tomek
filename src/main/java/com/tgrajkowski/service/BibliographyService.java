@@ -4,8 +4,6 @@ import com.tgrajkowski.model.BibliographyException;
 import com.tgrajkowski.model.ReturnMainObject;
 import com.tgrajkowski.model.authors.BibliographyReturn;
 import com.tgrajkowski.model.authors.PublicationReturn;
-import com.tgrajkowski.model.job.JobDaoProxy;
-import com.tgrajkowski.model.job.JobDto;
 import com.tgrajkowski.service.file.CheckFileService;
 import com.tgrajkowski.service.file.read.BibilographyCitationService;
 import com.tgrajkowski.service.file.read.publication.PublicationCitationServiceImpl;
@@ -32,8 +30,7 @@ public class BibliographyService {
     @Autowired
     private CheckFileService checkFileService;
 
-    @Autowired
-    private JobDaoProxy jobDaoProxy;
+
 
     public ReturnMainObject checkBibiographyCompatibility(MultipartFile multipartFile, String login) throws BibliographyException {
         ReturnMainObject returnMainObject = new ReturnMainObject();
@@ -71,12 +68,6 @@ public class BibliographyService {
         }
         returnMainObject.setPublicationReturn(publicationReturnMain);
         returnMainObject.setCalculationTime(System.currentTimeMillis() - start);
-
-        JobDto jobDto = new JobDto();
-        jobDto.setUser(login);
-        jobDto.setTitle(multipartFile.getOriginalFilename());
-        jobDto.setDate(new Date());
-        jobDaoProxy.saveNewJob(jobDto);
 
         return returnMainObject;
     }

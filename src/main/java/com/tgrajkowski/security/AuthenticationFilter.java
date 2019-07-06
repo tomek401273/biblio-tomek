@@ -1,10 +1,7 @@
-package com.tgrajkowski.authortization.security;
+package com.tgrajkowski.security;
 
-
-
-
-import com.tgrajkowski.authortization.model.user.UserDto;
-import com.tgrajkowski.authortization.model.user.UserMapper;
+import com.tgrajkowski.user.UserDto;
+import com.tgrajkowski.user.UserMapper;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.authentication.AuthenticationManager;
