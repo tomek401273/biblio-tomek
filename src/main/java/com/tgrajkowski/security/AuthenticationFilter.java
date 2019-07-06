@@ -48,6 +48,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .signWith(SignatureAlgorithm.HS512, SECRET.getBytes())
                 .compact();
+        System.out.println("Credentials size"+auth.getAuthorities().size());
 
         response.addHeader("Credentials", auth.getAuthorities().stream()
                 .map(x -> x.getAuthority())
