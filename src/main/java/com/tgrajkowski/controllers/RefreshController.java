@@ -12,6 +12,6 @@ public class RefreshController {
 
     @RequestMapping(method = RequestMethod.GET, value = "now")
     public String refreshBackend() {
-        return "refreshed successfully";
+        return "refreshed successfully!!!";
     }
 }
