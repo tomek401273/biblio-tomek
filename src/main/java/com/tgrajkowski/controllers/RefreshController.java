@@ -12,11 +12,6 @@ public class RefreshController {
 
     @RequestMapping(method = RequestMethod.GET, value = "now")
     public String refreshBackend() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         return "refreshed successfully";
     }
 }
